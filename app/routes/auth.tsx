@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { usePuterStore } from "~/lib/puter";
-import { optimizeDeps } from "vite";
 import { type NavigateFunction, useLocation, useNavigate } from "react-router";
 
 export const meta = () => ([
@@ -10,7 +9,6 @@ export const meta = () => ([
 
 const Auth = () => {
   const { isLoading, auth } = usePuterStore();
-
   const location = useLocation();
   const next: string = location.search.split("next=")[1] || "/";
   const navigate: NavigateFunction = useNavigate();
